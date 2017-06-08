@@ -15,6 +15,7 @@ public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		doPost(request, response);
 
 		/*
 		 * System.out.println("Info");
@@ -34,11 +35,14 @@ public class MyServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 	//	String s = request.getParameter("rez1");
+		
+		
 		Integer rez1 = Integer.parseInt(request.getParameter("rez1"));
 		Integer rez2 = Integer.parseInt(request.getParameter("rez2"));
-		System.out.println("Info");
-		PrintWriter out = response.getWriter(); out.println(
-			  rez1+ "   pervy  : " + rez2 + "   vtoroy"+"<h3>Hello</h3><br>Again"); out.close();
-
+		
+		request.setAttribute("rez1", rez1);
+		request.setAttribute("rez2", rez2);
+		
+		getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
 	}
 }
