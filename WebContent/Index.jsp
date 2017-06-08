@@ -29,8 +29,12 @@
 			<td>0</td>
 			<td>0</td>
 			<td>${rez1}</td>
+
 			<td>${rez2}</td>
+
 			<td>12</td>
+
+			
 		</tr>
 
 		<tr height="30px" align="center" valign="middle" bgcolor="#0DB142">
